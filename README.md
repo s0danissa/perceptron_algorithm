@@ -1,6 +1,4 @@
-## ROBT 407 | Homework 1 | Task 0.3
-##### Danissa Sandykbayeva
-
+## Perceptron Learning Algorithm
 Here I am just importing all the necessary libraries that I'm going to use in this task.
 
 
@@ -10,7 +8,7 @@ import numpy as np
 np.random.seed(5)
 ```
 
-#### 3.1 Generate a data set of size 20 as directed by Exercise 1.4 of LFD, and plot the examples ${(x_n, y_n)}$ as well as the target function f on a plane. Be sure to mark the examples from different classes differently, and add labels to the axes of the plot.
+#### 1. Generate a data set of size 20 as directed by Exercise 1.4 of LFD, and plot the examples ${(x_n, y_n)}$ as well as the target function f on a plane. Be sure to mark the examples from different classes differently, and add labels to the axes of the plot.
 Now I am creating a linearly-separable 2D dataset of 20 random points - 'D', and a list of labels corresponding to each point - 'L' 
 
 
@@ -43,10 +41,10 @@ plt.show()
 ```
 
 
-![png](output_6_0.png)
+![png](/README_images/output_6_0.png)
 
 
-#### 3.2 Run Perceptron Learning Algorithm (PLA) on the data set above. Report the number of updates that PLA takes before converging. Plot the examples ${(x_n, y_n)}$, the target function f , and the final hypothesis g in the same figure. Comment on whether f is close to g.
+#### 2. Run Perceptron Learning Algorithm (PLA) on the data set above. Report the number of updates that PLA takes before converging. Plot the examples ${(x_n, y_n)}$, the target function f , and the final hypothesis g in the same figure. Comment on whether f is close to g.
 
 Now I am here defining a function **pla** (**data** - training dataset, **labels** - vector with labels, **t** - number of iterrations/tries to learn) for the **PLA - Perceptron Learning Algorithm**. <br> Where: **W** - vector of weights, **n_error** - error simply computed as the number of incorrect predictions in a single try divided by the total number of predictions made *(this error is just for the purpose of demonstrating algorithm's preformance)*<br><br>As it was showed in the lectures the algorithm compares current prediction with the label and if it is not correct, it adjusts the weights accordingly ($w_{t+1}=w_t+y_n(t)*x_n(t)$) and returns final weights after going through the specified number of iterations.
 
@@ -111,14 +109,14 @@ print('Final hypothesis: g(X) = %.5f*X' % slope)
 ```
 
 
-![png](output_11_0.png)
+![png](/README_images/output_11_0.png)
 
 
     Final hypothesis: g(X) = 1.61250*X
     
 
 As it is seen from the graph above the algorithm perfectly learns on the training data of 20 points and satisfies the target function f(x).
-#### 3.3 Repeat everything in (3.2) with another randomly generated data set of size 20. Compare your results with (3.2)
+#### 3. Repeat everything in (2) with another randomly generated data set of size 20. Compare your results with (2)
 
 
 ```python
@@ -161,13 +159,13 @@ print('Final hypothesis: g(X) = %.5f*X' % slope)
     
 
 
-![png](output_13_1.png)
+![png](/README_images/output_13_1.png)
 
 
     Final hypothesis: g(X) = 0.32278*X
     
 
-#### 3.4 Repeat everything in (3.2) with another randomly generated data set of size 100. Compare your results with (3.2)
+#### 4 Repeat everything in (2) with another randomly generated data set of size 100. Compare your results with (2)
 
 
 ```python
@@ -214,7 +212,7 @@ print('Final hypothesis: g(X) = %.5f*X' % slope)
     
 
 
-![png](output_15_1.png)
+![png](/README_images/output_15_1.png)
 
 
     Final hypothesis: g(X) = 0.61453*X
@@ -222,7 +220,7 @@ print('Final hypothesis: g(X) = %.5f*X' % slope)
 
 Even though the amount pf the data samples is significantly larger as long as they are linearly separables the algorithm learns very fast and separates data perfectly.
 
-#### 3.5 Repeat everything in (3.2) with another randomly generated data set of size 1000. Compare your results with (3.2)
+#### 5. Repeat everything in (2) with another randomly generated data set of size 1000. Compare your results with (2)
 
 
 ```python
@@ -274,7 +272,7 @@ print('Final hypothesis: g(X) = %.5f*X' % slope)
     
 
 
-![png](output_18_1.png)
+![png](/README_images/output_18_1.png)
 
 
     Final hypothesis: g(X) = 0.39562*X
